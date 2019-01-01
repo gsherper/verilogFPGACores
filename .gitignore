@@ -1,0 +1,17 @@
+ise/*.bin
+ise/*.bit
+ise/*log
+ise/*.html
+ise/*.xml
+ise/*.xrpt
+ise/eq1.*
+ise/_xmsgs
+ise/iseconfig
+ise/xlnx_auto*
+ise/xst
+ise/_ngo
+ise/webtalk
+ise/usage*
+modelsim/
+vunit_out/
+
