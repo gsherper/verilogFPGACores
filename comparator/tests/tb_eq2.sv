@@ -3,9 +3,9 @@
 
 module tb_eq2;
 
-	reg test_in0, test_in1;
+	reg [1:0] test_in0, test_in1;
 	wire test_out;
-	eq1 uut(.i0(test_in0), .i1(test_in1), .eq(test_out));
+	eq2 uut(.a(test_in0), .b(test_in1), .aeqb(test_out));
 
 	`TEST_SUITE begin
  		`TEST_SUITE_SETUP begin
@@ -32,34 +32,34 @@ module tb_eq2;
 		`TEST_CASE("test2.1") begin
 		         $display("test one");
 		       
-			test_in0 = 1'b0;
-			test_in1 = 1'b0;
+			test_in0 = 2'b00;
+			test_in1 = 2'b00;
 			#10; 
 			assert(test_out == 1'b1) $display ("Test 2.1.1 pass");
 				else $error ("Test 1 failed");
 	
 			#200; 
 	
-			test_in0 = 1'b1;
-			test_in1 = 1'b0;
+			test_in0 = 2'b01;
+			test_in1 = 2'b00;
 			#10;
 			assert(test_out == 1'b0) $display ("Test 2.1.2 pass");
 				else $error ("Test 2.1.2 failed");
 		
 			#200; 
 	
-			test_in0 = 1'b1;
-			test_in1 = 1'b1;
+			test_in0 = 2'b01;
+			test_in1 = 2'b11;
 			#10;
-			assert(test_out == 1'b1) $display ("Test 2.1.3 pass");
+			assert(test_out == 1'b0) $display ("Test 2.1.3 pass");
 				else $error ("Test 2.1.3 failed");
 		
 			#200; 
 	
-			test_in0 = 1'b0;	
-			test_in1 = 1'b1;
+			test_in0 = 2'b10;	
+			test_in1 = 2'b10;
 			#10;
-			assert(test_out == 1'b0) $display ("Test 2.1.4 pass");
+			assert(test_out == 1'b1) $display ("Test 2.1.4 pass");
 				else $error("Test 2.1.4 failed");
 		
 			#200; 
@@ -68,11 +68,27 @@ module tb_eq2;
 		`TEST_CASE("test2.2") begin
 		         $display("test2.2");
 		
-			test_in0 = 1'b1;
-			test_in1 = 1'b1;
+			test_in0 = 2'b10;
+			test_in1 = 2'b00;
 			#10;
-			assert(test_out == 1'b1) $display ("Test 2.2 pass");
-				else $error ("Test 2.2 failed");
+			assert(test_out == 1'b0) $display ("Test 2.2.1 pass");
+				else $error ("Test 2.2.1 failed");
+		
+			#200; 
+			
+			test_in0 = 2'b11;
+			test_in1 = 2'b11;
+			#10;
+			assert(test_out == 1'b1) $display ("Test 2.2.2 pass");
+				else $error ("Test 2.2.2 failed");
+		
+			#200; 
+
+			test_in0 = 2'b11;
+			test_in1 = 2'b01;
+			#10;
+			assert(test_out == 1'b0) $display ("Test 2.2.3 pass");
+				else $error ("Test 2.2.3 failed");
 		
 			#200; 
 	
