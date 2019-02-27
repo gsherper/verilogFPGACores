@@ -1,3 +1,4 @@
+.vscode/settings.json
 comparator/ise/*.bin
 comparator/ise/*.bit
 comparator/ise/*log
@@ -14,6 +15,5 @@ comparator/ise/xst/*
 comparator/ise/_ngo/
 comparator/ise/webtalk/
 comparator/ise/usage*/
-comparator/modelsim/
 comparator/vunit_out/
 

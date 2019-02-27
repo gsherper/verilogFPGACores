@@ -1,0 +1,8 @@
+ise/four_bit*
+ise/two_bit*
+modelsim/work
+modelsim/*.mti
+modelsim/vsim*
+modelsim/vunit_results
+modelsim/wlft2*
+modelsim/vish*
