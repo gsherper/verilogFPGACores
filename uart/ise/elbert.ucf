@@ -1,0 +1,79 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+# This file is a .ucf for ElbertV2 Development Board                                                  #
+# To use it in your project :                                                                         #
+# * Remove or comment the lines corresponding to unused pins in the project                           #
+# * Rename the used signals according to the your project                                             #
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#**************************************************************************************************************************************************#
+#                                            UCF for ElbertV2 Development Board                                                                    #
+#**************************************************************************************************************************************************#
+CONFIG VCCAUX = "3.3" ;
+
+ # Clock 12 MHz
+  NET "clk" LOC = P129 | IOSTANDARD = "LVCMOS33" | PERIOD = 12 MHz HIGH 50%;
+
+  ####################################################################################################
+  #                               Seven Segment Display
+  ####################################################################################################
+      NET "SevenSegment[7]" LOC = P117 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "SevenSegment[6]" LOC = P116 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "SevenSegment[5]" LOC = P115 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "SevenSegment[4]" LOC = P113 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "SevenSegment[3]" LOC = P112 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "SevenSegment[2]" LOC = P111 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "SevenSegment[1]" LOC = P110 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "SevenSegment[0]" LOC = P114 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+
+      NET "Enable[2]" LOC = P124 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "Enable[1]" LOC = P121 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+      NET "Enable[0]" LOC = P120 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+
+####################################################################################################
+#                                       LED
+####################################################################################################
+    NET "LED[0]" LOC = P46 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[1]" LOC = P47 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[2]" LOC = P48 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[3]" LOC = P49 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[4]" LOC = P50 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[5]" LOC = P51 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[6]" LOC = P54 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[7]" LOC = P55 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+
+####################################################################################################
+#                                   Switches
+####################################################################################################
+    #NET "reset"               LOC = P79   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "btn" LOC = P80 | PULLUP | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    #NET "btn[1]"             LOC = P78   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    #NET "btn[2]"             LOC = P77   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+####################################################################################################
+#                                       GPIO
+####################################################################################################
+####################################################################################################
+# HEADER P4
+####################################################################################################
+	 NET "rx" LOC = P132 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+   NET "tx" LOC = P130 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+   NET "reset" LOC = P125 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12 | PULLDOWN;
+#pin2ucf - Thu Mar 14 23:33:14 2019
+#The following constraints were newly added
+NET "Enable<2>" LOC = P124;
+NET "SevenSegment<0>" LOC = P114;
+NET "SevenSegment<1>" LOC = P110;
+NET "SevenSegment<2>" LOC = P111;
+NET "LED<0>" LOC = P46;
+NET "SevenSegment<3>" LOC = P112;
+NET "LED<1>" LOC = P47;
+NET "SevenSegment<4>" LOC = P113;
+NET "LED<2>" LOC = P48;
+NET "SevenSegment<5>" LOC = P115;
+NET "LED<3>" LOC = P49;
+NET "SevenSegment<6>" LOC = P116;
+NET "LED<4>" LOC = P50;
+NET "SevenSegment<7>" LOC = P117;
+NET "LED<5>" LOC = P51;
+NET "LED<6>" LOC = P54;
+NET "LED<7>" LOC = P55;
+NET "Enable<0>" LOC = P120;
+NET "Enable<1>" LOC = P121;
