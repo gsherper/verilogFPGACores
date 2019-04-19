@@ -1,0 +1,39 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+# This file is a .ucf for ElbertV2 Development Board                                                  #
+# To use it in your project :                                                                         #
+# * Remove or comment the lines corresponding to unused pins in the project                           #
+# * Rename the used signals according to the your project                                             #
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#**************************************************************************************************************************************************#
+#                                            UCF for ElbertV2 Development Board                                                                    #
+#**************************************************************************************************************************************************#
+CONFIG VCCAUX = "3.3" ;
+
+ # Clock 12 MHz
+  NET "clk" LOC = P129 | IOSTANDARD = "LVCMOS33" | PERIOD = 12 MHz HIGH 50%;
+
+####################################################################################################
+#                                       LED
+####################################################################################################
+    NET "LED[0]" LOC = P46 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[1]" LOC = P47 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[2]" LOC = P48 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[3]" LOC = P49 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[4]" LOC = P50 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[5]" LOC = P51 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[6]" LOC = P54 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+    NET "LED[7]" LOC = P55 | IOSTANDARD = "LVCMOS33" | SLEW = SLOW | DRIVE = 12;
+
+####################################################################################################
+#                                   Switches
+####################################################################################################
+    NET "reset"               LOC = P79   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+  
+####################################################################################################
+#                                       GPIO
+####################################################################################################
+# HEADER P1
+
+    NET "latch"              LOC = P31  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ;
+    NET "sclk"               LOC = P32  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ;
+    NET "sdata"              LOC = P28  | IOSTANDARD = LVTTL | DRIVE = 8 | SLEW = FAST | PULLUP ;
